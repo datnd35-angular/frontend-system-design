@@ -95,6 +95,13 @@ SSE (Server-Sent Events) là một phương thức giao tiếp một chiều t�
 
 ### **4. WebHook**
 
+**Webhook** là một công nghệ rất tiện dụng trong việc triển khai các phản ứng sự kiện `(event)` trên `website` của bạn. `Webhook` cung cấp một giải pháp giúp ứng dụng `server-side` thông báo cho ứng dụng phía client-side khi có sự kiện phát sinh đã xảy ra trên máy chủ (event reaction).
+
+**Ví dụ**
+
+Ứng dụng của chúng ta nếu dùng `http` để giao tiếp với `server` thì trường hợp nếu một cập nhật dữ liệu mới, hay theo dõi dữ liêụ với trên `UI`thì phải gọi `request` hoặc refresh `browser` lại, nhưng khi sử dụng `Webhook` người dùng cần cần thực hiện những việc này nữa `Webhook` sẽ chịu trách nhiệm thông báo lại cho người dùng, cập nhật thông tin mới ngay lập tức.
+
+
 ## **Security** 
 
 <img width="777" alt="image" src="https://github.com/user-attachments/assets/f9319104-e23f-4791-b5a4-066acb596ab7" />
@@ -120,6 +127,8 @@ SSE (Server-Sent Events) là một phương thức giao tiếp một chiều t�
 ### **10. Client Side Security**
 
 ### **11. Compliance**
+
+Compliance Security là một khía cạnh quan trọng trong việc đảm bảo rằng các hệ thống, dữ liệu và quy trình của một tổ chức tuân thủ các tiêu chuẩn và quy định bảo mật do các cơ quan chức năng hoặc ngành công nghiệp đặt ra. Compliance Security không chỉ liên quan đến việc bảo vệ hệ thống khỏi các mối đe dọa mà còn bao gồm việc tuân thủ các yêu cầu pháp lý và quy định để tránh các vấn đề pháp lý hoặc tài chính.
 
 ### **12. Dependency Services**
 
@@ -164,6 +173,13 @@ SSE (Server-Sent Events) là một phương thức giao tiếp một chiều t�
 ### **2. Session Storage**
 
 ### **3. Service Worker Cache**
+
+
+![image](https://github.com/user-attachments/assets/e4ef1855-bf69-47af-89f9-c173c5fc314a)
+
+Website chạy có mạng thì là điều hiển nhiên rồi đúng không, nhưng còn website chạy khi không có mạng thì sao? Và công cụ giúp chúng ta làm được điều này chính là Service Worker.
+
+Service worker là một script được trình duyệt của bạn chạy ngầm, tách biệt với web page. Service worker có thể cache lại các file, các api của bạn. Do đó, nó có thể giúp bạn bắn thông báo, chạy offline, load trang web nhanh hơn.
 
 ### **4. State Management**
 
