@@ -245,4 +245,4 @@ Với **API Cache**, khi người dùng đầu tiên yêu cầu dữ liệu, API
 
 ### **10. Accordion**
 
-## **High-Level Design ** 
+## **High-Level Design** 
