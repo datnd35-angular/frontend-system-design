@@ -1,4 +1,5 @@
-<img width="437" alt="image" src="https://github.com/user-attachments/assets/3a59e833-9182-4ce2-95a7-b4275338bf4d" />## **Networking** 
+
+## **Networking** 
 
 <img width="525" alt="image" src="https://github.com/user-attachments/assets/a0d8918c-43bc-4dd9-8b35-621b62f25b72" />
 
@@ -87,7 +88,7 @@ Các giao thức mạng là xương sống của việc truyền thông trên In
 
 ## **Database & Caching** 
 
-<img width="437" alt="image" src="https://github.com/user-attachments/assets/61f7e6f8-313b-43b6-b254-290e6b7a6df8" />
+<img width="786" alt="image" src="https://github.com/user-attachments/assets/75e6b142-10f6-4add-8d78-3ca63173c536" />
 
 ### **1. Cookie Storage**
 
@@ -115,5 +116,28 @@ Các giao thức mạng là xương sống của việc truyền thông trên In
 
 ### **2. Service Worker**
 
+## **Low-Level Design** 
 
+<img width="786" alt="image" src="https://github.com/user-attachments/assets/76076413-e6e2-457f-a321-666623b4a0f8" />
 
+### **1. Component Design**
+
+### **2. Shimmer UI**
+
+### **3. State Management**
+
+### **4. Infinite Scroll**
+
+### **5. Real Time Updates**
+
+### **6. Routing**
+
+### **7. Image Carousel**
+
+### **8. Multi Language Support**
+
+### **9. Search Bar**
+
+### **10. Accordion**
+
+## **High-Level Design ** 
