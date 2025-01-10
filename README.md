@@ -174,12 +174,11 @@ Compliance Security là một khía cạnh quan trọng trong việc đảm bả
 
 ### **3. Service Worker Cache**
 
-
-![image](https://github.com/user-attachments/assets/e4ef1855-bf69-47af-89f9-c173c5fc314a)
-
 Website chạy có mạng thì là điều hiển nhiên rồi đúng không, nhưng còn website chạy khi không có mạng thì sao? Và công cụ giúp chúng ta làm được điều này chính là Service Worker.
 
 Service worker là một script được trình duyệt của bạn chạy ngầm, tách biệt với web page. Service worker có thể cache lại các file, các api của bạn. Do đó, nó có thể giúp bạn bắn thông báo, chạy offline, load trang web nhanh hơn.
+
+![image](https://github.com/user-attachments/assets/e4ef1855-bf69-47af-89f9-c173c5fc314a)
 
 ### **4. State Management**
 
