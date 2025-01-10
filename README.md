@@ -189,7 +189,28 @@ Service worker là một script được trình duyệt của bạn chạy ngầ
 
 ### **7. Normalization**
 
+`Normalization cache` là một kỹ thuật tối ưu hóa trong các ứng dụng phần mềm, đặc biệt là trong hệ thống cơ sở dữ liệu và các `API`, giúp giảm thiểu chi phí xử lý bằng cách lưu trữ kết quả của các phép biến đổi hoặc chuẩn hóa đã thực hiện trước đó. Tóm lại chuẩn hoá là bạn theo một cái rule để đặt tên cho `api` (vd ko dùng chưa hoa, ký tự đặc biệt) để có thể `cache` lại được trên `browser` .
+
 ### **8. API Cache**
+
+
+**API Cache** là kỹ thuật lưu trữ (cache) các phản hồi (response) của API trong bộ nhớ tạm thời để tăng tốc độ truy cập và giảm tải cho server. Khi một API được gọi, thay vì phải xử lý yêu cầu từ đầu và truy vấn dữ liệu từ cơ sở dữ liệu hoặc các dịch vụ bên ngoài mỗi lần, API Cache lưu lại kết quả của yêu cầu đó và trả lại kết quả từ cache khi có yêu cầu tương tự. Điều này giúp giảm bớt thời gian phản hồi và tối ưu hiệu suất hệ thống.
+
+
+**Các loại API Cache:**
+1. **Client-Side Cache**: Bộ nhớ đệm được lưu trữ trên thiết bị người dùng (trình duyệt, mobile app). Ví dụ, cache HTTP response trong trình duyệt.
+   
+2. **Server-Side Cache**: Bộ nhớ đệm được lưu trữ trên server hoặc các hệ thống trung gian (ví dụ, Redis hoặc Memcached). Đây là cách phổ biến để lưu trữ các phản hồi API ở phía server để giảm tải cho backend.
+
+3. **CDN Cache**: Các mạng phân phối nội dung (CDN) có thể cache các phản hồi API ở các điểm mạng gần người dùng cuối, giảm độ trễ và tăng tốc độ tải trang.
+
+Với **API Cache**, khi người dùng đầu tiên yêu cầu dữ liệu, API sẽ lấy dữ liệu từ server và lưu trữ vào cache. Những người dùng tiếp theo yêu cầu thông tin tương tự sẽ nhận được dữ liệu từ cache mà không phải truy vấn lại server, giúp giảm tải và tăng tốc độ phản hồi.
+
+**Các công cụ API Cache phổ biến:**
+1. **Redis**: Một hệ thống lưu trữ dữ liệu trong bộ nhớ phổ biến, thường được sử dụng cho API Cache.
+2. **Memcached**: Một hệ thống lưu trữ dữ liệu trong bộ nhớ khác, cũng rất phổ biến cho việc cache dữ liệu API.
+3. **Varnish**: Một reverse proxy HTTP giúp cache các phản hồi HTTP, giảm tải cho backend.
+4. **Nginx**: Có thể được cấu hình để thực hiện cache các phản hồi API hoặc các yêu cầu tĩnh.
 
 ### **9. HTTP Cache**
 
