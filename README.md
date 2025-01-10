@@ -5,13 +5,50 @@
 
 ### **1. Protocols**
 
-Các giao thức mạng là xương sống của việc truyền thông trên Internet. HTTP quản lý việc truyền dữ liệu web, trong khi HTTPS bổ sung mã hóa. TCP/IP đảm bảo việc truyền dữ liệu đáng tin cậy, và DNS chuyển đổi tên miền thành địa chỉ IP. Hiểu rõ các giao thức này rất quan trọng để chẩn đoán các sự cố mạng, tối ưu hóa hiệu suất web và triển khai các giải pháp truyền thông an toàn
+**Các giao thức hoạt động trên Network Layer:**
+
+1. **IP (Giao thức Internet):** Chịu trách nhiệm định tuyến dữ liệu qua mạng.
+2. **IPsec (Bảo mật Giao thức Internet):** Là một bộ giao thức thiết lập kết nối IP được mã hóa và xác thực qua VPN. Bao gồm:
+   - Giao thức Bảo vệ Mã hóa (ESP)
+   - Tiêu đề Xác thực (AH)
+   - Liên kết Bảo mật (SA)
+3. **ICMP (Giao thức Thông báo Điều khiển Internet):** Báo cáo lỗi và cung cấp các thông báo trạng thái. Ví dụ, nếu bộ định tuyến không thể chuyển tiếp gói tin, nó sẽ gửi một thông báo ICMP quay lại nguồn của gói tin.
+4. **IGMP (Giao thức Quản lý Nhóm Internet):** Quản lý kết nối mạng một đến nhiều, cho phép nhiều máy tính nhận dữ liệu hướng đến một địa chỉ IP duy nhất.
+
+**Các giao thức quan trọng khác trên Internet:**
+
+1. **TCP (Giao thức Điều khiển Truyền tải):** Giao thức ở lớp truyền tải đảm bảo việc truyền tải dữ liệu đáng tin cậy. Thường được kết hợp với IP tạo thành bộ giao thức TCP/IP.
+2. **HTTP (Giao thức Truyền tải Siêu văn bản):** Giao thức dùng để truyền tải dữ liệu giữa các thiết bị trên World Wide Web, thuộc lớp ứng dụng (Lớp 7).
+3. **HTTPS (Giao thức Truyền tải Siêu văn bản Bảo mật):** Phiên bản mã hóa của HTTP, đảm bảo sự an toàn khi truyền thông.
+4. **TLS/SSL (Bảo mật Giao thức Truyền tải / Lớp ổ cắm Bảo mật):** Giao thức mã hóa các tin nhắn HTTPS, trong đó TLS là phiên bản kế thừa của SSL.
+5. **UDP (Giao thức Datagram Người dùng):** Một lựa chọn nhanh hơn nhưng ít đáng tin cậy hơn TCP, thường được sử dụng trong các dịch vụ như phát video trực tuyến và trò chơi, nơi tốc độ truyền tải dữ liệu là yếu tố quan trọng.
 
 ### **2. REST API**
 
+REST API cho phép các hệ thống trao đổi dữ liệu qua giao thức HTTP, thường sử dụng các phương thức HTTP như GET, POST, PUT, DELETE, v.v. để thực hiện các thao tác trên tài nguyên.
+
 ### **3. GraphQL**
 
+**GraphQL** là một ngôn ngữ truy vấn cho API, giúp giải quyết những vấn đề của REST API:
+
+1. **Giảm dữ liệu thừa:** Client chỉ nhận dữ liệu cần thiết, tránh tải về dữ liệu không cần thiết.
+2. **Giảm số lượng yêu cầu:** Một endpoint duy nhất cho phép truy vấn nhiều loại dữ liệu trong một yêu cầu.
+3. **Linh hoạt khi thay đổi API:** Schema được định nghĩa rõ ràng, thay đổi ở server không ảnh hưởng đến client.
+4. **Hỗ trợ real-time:** Cho phép theo dõi và nhận cập nhật dữ liệu thời gian thực qua subscriptions.
+5. **Truy vấn dữ liệu phức tạp:** Cho phép yêu cầu dữ liệu từ nhiều nguồn trong một truy vấn duy nhất.
+6. **Tăng khả năng bảo trì:** Không cần quản lý các phiên bản API, dễ dàng mở rộng API mà không ảnh hưởng đến client.
+7. **Trải nghiệm phát triển tốt hơn:** Các công cụ như GraphiQL giúp thử nghiệm và khám phá API dễ dàng.
+
 ### **4. gRPC**
+
+**gRPC** (Google Remote Procedure Call) là một framework giao tiếp giữa các dịch vụ (microservices) được phát triển bởi Google, sử dụng HTTP/2 để truyền tải dữ liệu và Protobuf (Protocol Buffers) làm định dạng dữ liệu.
+
+**Khi nào nên sử dụng gRPC?**
+- Khi cần giao tiếp hiệu quả giữa các microservices trong môi trường phân tán.
+- Các ứng dụng yêu cầu truyền tải dữ liệu tốc độ cao và giảm độ trễ.
+- Khi cần hỗ trợ streaming dữ liệu (ví dụ: video, âm thanh, hoặc dữ liệu thời gian thực).
+
+**So với REST:** gRPC nhanh hơn và hiệu quả hơn khi truyền tải dữ liệu nhờ Protobuf và HTTP/2, đồng thời hỗ trợ các tính năng như streaming và giao tiếp hai chiều.
 
 
 ## **Communication** 
@@ -20,9 +57,41 @@ Các giao thức mạng là xương sống của việc truyền thông trên In
 
 ### **1. Short Polling**
 
+Thường thì một ứng dụng `Real time` thì phía `Client` sẽ luôn lắng nghe phản hồi từ phía `Server` và `Server` sẽ phản hồi lại khi mà có một cập nhật mới, trừ khi bạn `unsubscribe` đi.
+
+**Short polling** là một cách đơn giản để mô phỏng cập nhật `Real time`. Nghĩa là nó gửi `request` xuống `server` theo một chu kỳ nhất định, ví dụ mỗi `5s`. Và sau đó `sever` sẽ trả lời `Client` bất kể có cập nhật mới hay không.Điều này có thể dẫn đến tốn tài nguyên do phải gửi yêu cầu, và phản hồi liên tục, ngay cả khi không có dữ liệu mới. Nó phù hợp nhất với những tình huống mà các bản cập nhật không xảy ra thường xuyên và sự chậm trễ nhẹ là chấp nhận được.
+
+**Cách hoạt động:**
+  1. **Client** gửi yêu cầu đến **server** mỗi 5 giây để kiểm tra xem có tin nhắn mới hay không.
+  2. **Server** trả về dữ liệu (nếu có tin nhắn mới) hoặc trả về thông báo không có dữ liệu mới.
+  3. **Client** hiển thị tin nhắn mới nếu có, sau đó lại gửi yêu cầu tiếp theo sau 5 giây.
+  
 ### **2. Long Polling**
 
+**Long Polling** là một kỹ thuật được sử dụng để mô phỏng cập nhật thời gian thực trong các ứng dụng web. Nó là một cải tiến của **short polling**, giúp giảm tần suất gửi yêu cầu và giảm tải tài nguyên cho server, đồng thời vẫn có thể cung cấp trải nghiệm thời gian thực gần hơn.
+
+**Cách hoạt động của Long Polling:**
+1. **Client** gửi yêu cầu đến **server** (không giống như short polling, yêu cầu này không lặp lại liên tục).
+2. **Server** giữ yêu cầu mở cho đến khi có dữ liệu mới hoặc cập nhật có sẵn (ví dụ, tin nhắn mới, thông báo mới).
+3. Khi có dữ liệu mới, **server** trả về phản hồi cho **client** với dữ liệu mới.
+4. Sau khi **client** nhận được phản hồi, nó sẽ ngay lập tức gửi lại yêu cầu mới tới server để tiếp tục theo dõi các cập nhật.
+
 ### **3. SSE**
+SSE (Server-Sent Events) là một phương thức giao tiếp một chiều từ server đến client trong các ứng dụng web, cho phép server gửi dữ liệu liên tục đến client qua một kết nối HTTP mở mà không cần phải yêu cầu từ phía client. Đây là một phương thức lý tưởng để cập nhật dữ liệu theo thời gian thực mà không cần phải sử dụng các cơ chế phức tạp như WebSockets.
+
+**Cách hoạt động của SSE:**
+1. **Kết nối từ client đến server:** Client (thường là trình duyệt web) mở một kết nối HTTP tới server với tiêu đề `Accept: text/event-stream`.
+2. **Dữ liệu từ server đến client:** Server sau đó có thể gửi các sự kiện liên tục dưới dạng các dòng văn bản đơn giản, được phân biệt bởi ký tự đặc biệt (ví dụ: `data:`, `event:`, `id:`).
+3. **SSE Event:** Mỗi sự kiện có thể chứa dữ liệu, và khi có dữ liệu mới, server sẽ gửi tới client mà không cần client phải yêu cầu. Các sự kiện có thể được cấu hình để gửi dưới các loại khác nhau, ví dụ như `message`, `error`, hoặc các sự kiện tùy chỉnh.
+
+**Lợi ích của SSE:**
+- **Dễ triển khai:** SSE dễ dàng tích hợp vào các ứng dụng web, vì nó sử dụng giao thức HTTP chuẩn và không yêu cầu cấu hình phức tạp như WebSockets.
+- **Hỗ trợ tự động tái kết nối:** Nếu kết nối giữa client và server bị gián đoạn, client sẽ tự động thử lại kết nối sau một khoảng thời gian.
+- **Tiết kiệm băng thông:** SSE chỉ gửi dữ liệu khi có thay đổi, giúp tiết kiệm tài nguyên và băng thông.
+- **Đơn giản và hiệu quả:** SSE là một giải pháp nhẹ nhàng để truyền tải các cập nhật dữ liệu liên tục trong các ứng dụng như thông báo theo thời gian thực, cập nhật trạng thái, hoặc dữ liệu cảm biến.
+
+**Hạn chế của SSE:**
+- **Chỉ một chiều:** SSE chỉ hỗ trợ giao tiếp từ server đến client, không như WebSockets có thể giao tiếp hai chiều.
 
 ### **4. WebHook**
 
