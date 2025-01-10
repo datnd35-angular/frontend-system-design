@@ -1,4 +1,4 @@
-## **Networking** 
+<img width="437" alt="image" src="https://github.com/user-attachments/assets/3a59e833-9182-4ce2-95a7-b4275338bf4d" />## **Networking** 
 
 <img width="525" alt="image" src="https://github.com/user-attachments/assets/a0d8918c-43bc-4dd9-8b35-621b62f25b72" />
 
@@ -72,3 +72,48 @@ Các giao thức mạng là xương sống của việc truyền thông trên In
 ### **3. Security**
 
 ### **4. TDD**
+
+## **Performance** 
+
+<img width="437" alt="image" src="https://github.com/user-attachments/assets/61f7e6f8-313b-43b6-b254-290e6b7a6df8" />
+
+### **1. Monitoring**
+
+### **2. Tools**
+
+### **3. Network Optimization**
+
+### **4. Rendering Pattern**
+
+## **Database & Caching** 
+
+<img width="437" alt="image" src="https://github.com/user-attachments/assets/61f7e6f8-313b-43b6-b254-290e6b7a6df8" />
+
+### **1. Cookie Storage**
+
+### **2. Session Storage**
+
+### **3. Service Worker Cache**
+
+### **4. State Management**
+
+### **5. Local Storage**
+
+### **6. Indexed DB**
+
+### **7. Normalization**
+
+### **8. API Cache**
+
+### **9. HTTP Cache**
+
+## **Offline Support** 
+
+<img width="394" alt="image" src="https://github.com/user-attachments/assets/73912738-330d-4051-b564-b7e663ed3151" />
+
+### **1. PWA's**
+
+### **2. Service Worker**
+
+
+
